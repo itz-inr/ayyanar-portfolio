@@ -1,90 +1,94 @@
 /* src/components/TrustStrip.css */
+
 .trust-strip {
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--bg-tertiary);
+  background: rgba(10, 14, 35, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 1.25rem 0;
+  position: relative;
+  z-index: 10;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .trust-strip-top {
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.85rem;
 }
 
 .marquee-container {
   display: flex;
   overflow: hidden;
-  white-space: nowrap;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .marquee-content {
   display: flex;
-  animation: marquee 30s linear infinite;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: scrollMarquee 35s linear infinite;
 }
 
 .trust-item {
   display: inline-flex;
   align-items: center;
-  margin: 0 2rem;
-  font-family: var(--font-heading);
+  gap: 0.6rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  font-size: 1.1rem;
   color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent-cyan);
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  margin-right: 15px;
-  box-shadow: 0 0 10px var(--accent-glow);
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  background: var(--grad-cyan-blue);
+  box-shadow: 0 0 8px #06b6d4;
 }
 
 .trust-strip-bottom {
-  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.75rem;
   justify-content: center;
-  gap: 1rem;
 }
 
 .tech-badge {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 0.5rem 1.25rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-primary);
+  padding: 0.35rem 0.9rem;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #60a5fa;
   transition: var(--transition);
 }
 
 .tech-badge:hover {
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
+  background: rgba(59, 130, 246, 0.25);
+  border-color: #3b82f6;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {
-  .tech-badges {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    flex-wrap: nowrap;
-  }
-  .tech-badge {
-    white-space: nowrap;
+  .trust-strip {
+    padding: 1rem 0;
   }
 }

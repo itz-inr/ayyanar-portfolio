@@ -1,23 +1,27 @@
 /* src/components/WhatIBuild.css */
+
 .what-i-build {
-  background-color: var(--bg-color);
+  position: relative;
 }
 
 .build-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.25rem;
 }
 
 .build-card {
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
+  background: rgba(14, 20, 50, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.22);
   border-radius: var(--border-radius-lg);
-  padding: 3rem 2rem;
-  transition: var(--transition-slow);
+  padding: 3rem 2.25rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .build-card::before {
@@ -27,16 +31,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.05), transparent 60%);
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), rgba(168, 85, 247, 0.1) 60%, transparent 100%);
   z-index: -1;
   opacity: 0;
-  transition: var(--transition-slow);
+  transition: opacity 0.5s ease;
 }
 
 .build-card:hover {
   transform: translateY(-10px);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 20px 45px rgba(59, 130, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(20, 28, 68, 0.75);
 }
 
 .build-card:hover::before {
@@ -44,44 +49,61 @@
 }
 
 .build-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--bg-secondary);
-  width: 70px;
-  height: 70px;
+  font-size: 2.5rem;
+  margin-bottom: 1.75rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+  width: 76px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #60a5fa;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .build-card:hover .build-icon {
-  border-color: var(--accent-cyan);
+  border-color: #06b6d4;
+  color: #ffffff;
+  background: var(--grad-primary);
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
 .build-title {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   margin-bottom: 1.5rem;
-  color: var(--text-primary);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .build-list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .build-list li {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
 }
 
 .build-list li::before {
   content: '✓';
-  color: var(--accent-cyan);
-  margin-right: 10px;
-  font-weight: bold;
+  color: #06b6d4;
+  margin-right: 12px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  background: rgba(6, 182, 212, 0.12);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(6, 182, 212, 0.3);
 }

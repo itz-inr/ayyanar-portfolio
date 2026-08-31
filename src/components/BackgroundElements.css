@@ -1,0 +1,178 @@
+/* src/components/BackgroundElements.css */
+
+.background-ecosystem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Atmospheric Ambient Glowing Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.orb-primary {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, rgba(99, 102, 241, 0.15) 70%, transparent 100%);
+  animation: orbFloat1 22s infinite ease-in-out alternate;
+}
+
+.orb-secondary {
+  width: 600px;
+  height: 600px;
+  top: 35%;
+  right: -150px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(168, 85, 247, 0.12) 70%, transparent 100%);
+  animation: orbFloat2 28s infinite ease-in-out alternate;
+}
+
+.orb-tertiary {
+  width: 550px;
+  height: 550px;
+  bottom: -100px;
+  left: 20%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.35) 0%, rgba(59, 130, 246, 0.12) 70%, transparent 100%);
+  animation: orbFloat3 25s infinite ease-in-out alternate;
+}
+
+.orb-highlight {
+  width: 400px;
+  height: 400px;
+  top: 65%;
+  left: 70%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, rgba(168, 85, 247, 0.08) 70%, transparent 100%);
+  animation: orbFloat1 19s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes orbFloat1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.1); }
+  100% { transform: translate(-30px, 80px) scale(0.95); }
+}
+
+@keyframes orbFloat2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, -50px) scale(1.15); }
+  100% { transform: translate(40px, 60px) scale(0.9); }
+}
+
+@keyframes orbFloat3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, -70px) scale(1.08); }
+  100% { transform: translate(-50px, 30px) scale(0.98); }
+}
+
+/* Subtle Grid Pattern */
+.bg-grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(139, 92, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px, 80px 80px, 80px 80px;
+  background-position: 0 0, 0 0, 0 0;
+  opacity: 0.65;
+}
+
+
+
+/* Floating Technology Icons */
+.floating-tech-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+}
+
+.floating-icon-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  animation: floatOrganic infinite ease-in-out alternate;
+  transform-origin: center;
+  transition: opacity 0.3s ease;
+}
+
+.floating-icon-item svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.floating-icon-label {
+  font-size: 0.72rem;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #cbd5e1;
+  margin-top: 4px;
+  white-space: nowrap;
+  opacity: 0.9;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes floatOrganic {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(15px) rotate(-3deg);
+  }
+}
+
+/* Reduced motion media query */
+@media (prefers-reduced-motion: reduce) {
+  .bg-orb,
+  .floating-icon-item {
+    animation: none !important;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .bg-orb {
+    filter: blur(60px);
+    opacity: 0.25;
+  }
+  .orb-primary {
+    width: 300px;
+    height: 300px;
+  }
+  .orb-secondary {
+    width: 350px;
+    height: 350px;
+  }
+  .floating-icon-item {
+    opacity: 0.08 !important;
+  }
+  /* Hide half of floating icons on small mobile screens to keep performance ultra fast */
+  .floating-icon-item:nth-child(even) {
+    display: none;
+  }
+}

@@ -1,47 +1,47 @@
+/* src/components/Resume.css */
 .resume {
-  background-color: var(--bg-black);
+  position: relative;
   padding: 100px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Premium separation */
 }
 
 .resume-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 50px;
+  gap: 3.5rem;
+  margin-top: 3.5rem;
 }
 
 @media (max-width: 900px) {
   .resume-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 2.5rem;
   }
 }
 
 .resume-heading {
-  font-size: 1.8rem;
-  color: var(--text-primary);
-  margin-bottom: 30px;
-  font-weight: 600;
-  border-bottom: 2px solid var(--accent-cyan);
+  font-size: 1.65rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  border-bottom: 2px solid #06b6d4;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .mt-5 {
-  margin-top: 50px;
+  margin-top: 3.5rem;
 }
 
 /* Timeline */
 .timeline {
   position: relative;
-  border-left: 2px solid rgba(255, 255, 255, 0.1);
-  padding-left: 30px;
+  border-left: 2px dashed rgba(139, 92, 246, 0.3);
+  padding-left: 2rem;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .timeline-item:last-child {
@@ -50,26 +50,28 @@
 
 .timeline-dot {
   position: absolute;
-  left: -37px;
-  top: 5px;
-  width: 12px;
-  height: 12px;
+  left: -39px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: var(--accent-cyan);
-  box-shadow: 0 0 10px var(--accent-cyan);
+  background: #080c24;
+  border: 3px solid #06b6d4;
+  box-shadow: 0 0 12px #06b6d4;
 }
 
 .timeline-title {
   font-size: 1.4rem;
-  color: var(--text-primary);
-  margin-bottom: 5px;
+  color: #ffffff;
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .timeline-meta {
-  font-size: 1rem;
-  color: var(--accent-cyan);
-  margin-bottom: 15px;
-  font-weight: 500;
+  font-size: 0.98rem;
+  color: #60a5fa;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .timeline-details {
@@ -79,29 +81,32 @@
 
 .timeline-details li {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
+  padding-left: 1.5rem;
+  margin-bottom: 0.65rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  font-size: 0.98rem;
 }
 
 .timeline-details li::before {
-  content: '▹';
+  content: '✦';
   position: absolute;
   left: 0;
-  color: var(--accent-cyan);
+  color: #a855f7;
+  font-size: 0.8rem;
 }
 
 .timeline-score {
   color: var(--text-secondary);
   font-weight: 500;
+  font-size: 1rem;
 }
 
 /* Cards Grid (Certifications) */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 @media (max-width: 600px) {
@@ -111,48 +116,63 @@
 }
 
 .cert-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(14, 20, 50, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cert-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.2);
+  border-color: #ec4899;
+  background: rgba(22, 30, 68, 0.8);
 }
 
 .cert-card h4 {
   font-size: 1.1rem;
-  color: var(--text-primary);
-  margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 .cert-card p {
-  font-size: 0.9rem;
-  color: var(--accent-cyan);
+  font-size: 0.92rem;
+  color: #60a5fa;
 }
 
 /* Achievements List */
 .achievements-list {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 1.5rem;
 }
 
 .achievement-item {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 20px;
-  border-radius: 12px;
-  border-left: 3px solid var(--accent-cyan);
+  background: rgba(14, 20, 50, 0.65);
+  backdrop-filter: blur(16px);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid #06b6d4;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  border-right: 1px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.2);
+  border-left-color: #60a5fa;
 }
 
 .achievement-item h4 {
   font-size: 1.2rem;
-  color: var(--text-primary);
-  margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 .achievement-item h4 span {
@@ -163,5 +183,6 @@
 
 .achievement-item p {
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 0.98rem;
 }

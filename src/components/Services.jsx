@@ -1,5 +1,6 @@
 import React from 'react';
 import { services } from '../data/portfolioData';
+import { ArrowRight } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
@@ -13,10 +14,13 @@ const Services = () => {
 
         <div className="services-list">
           {services.map((service, idx) => (
-            <div className="service-item fade-in" key={idx}>
+            <div className="service-item fade-in" key={idx} style={{ animationDelay: `${idx * 80}ms` }}>
               <div className="service-id">{service.id}</div>
               <div className="service-content">
-                <h3 className="service-title">{service.title}</h3>
+                <div className="service-header">
+                  <h3 className="service-title">{service.title}</h3>
+                  <ArrowRight size={20} className="service-arrow" />
+                </div>
                 <p className="service-desc">{service.description}</p>
               </div>
             </div>
