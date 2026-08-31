@@ -1,0 +1,92 @@
+/* src/components/TechStack.css */
+.tech-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.tech-section {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.professional-exp {
+  border-left: 4px solid #4ade80;
+}
+
+.available-cap {
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.tech-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1.5rem;
+}
+
+.tech-header h3 {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.icon-green {
+  color: #4ade80;
+}
+
+.icon-cyan {
+  color: var(--accent-cyan);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tech-group h4 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-item {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.tech-item:hover {
+  border-color: var(--accent-cyan);
+  background-color: rgba(0, 229, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .tech-section {
+    padding: 1.5rem;
+  }
+}

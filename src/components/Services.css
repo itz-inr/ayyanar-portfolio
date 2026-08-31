@@ -1,0 +1,52 @@
+/* src/components/Services.css */
+.services {
+  background-color: var(--bg-secondary);
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.service-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.service-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom-color: var(--accent-cyan);
+}
+
+.service-id {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.service-item:hover .service-id {
+  color: var(--accent-cyan);
+}
+
+.service-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}
